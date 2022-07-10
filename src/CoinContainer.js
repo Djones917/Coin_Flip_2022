@@ -9,8 +9,9 @@ class CoinContainer extends Component {
       nHeads: 0,
       nTails: 0
     }
-    {side: 'heads', url: ”https://tinyurl.com/react-coin-heads-jpg”}
-    {side: 'tails', url: “https://tinyurl.com/react-coin-tails-jpg”"}
+    {sides: 'heads', url: "https://tinyurl.com/react-coin-heads-jpg"}
+    {sides: 'tails', url: "https://tinyurl.com/react-coin-tails-jpg"}
+  }
 } 
 
 export default CoinContainer;
