@@ -6,7 +6,7 @@ class CoinContainer extends Component {
       {sides: 'heads', imgSrc: "https://tinyurl.com/react-coin-heads-jpg"},
       {sides: 'tails', imgSrc: "https://tinyurl.com/react-coin-tails-jpg"}
     ]
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -15,6 +15,11 @@ class CoinContainer extends Component {
       nHeads: 0,
       nTails: 0
     }    
+  }
+  render() {
+    return (
+      <div className='CoinContainer'></div>
+    )
   }
 } 
 
