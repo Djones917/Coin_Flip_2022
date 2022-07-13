@@ -18,7 +18,9 @@ class CoinContainer extends Component {
   }
   render() {
     return (
-      <div className='CoinContainer'></div>
+      <div className='CoinContainer'>
+        <h2>Let's Flip A Coin!</h2>
+      </div>
     )
   }
 } 
