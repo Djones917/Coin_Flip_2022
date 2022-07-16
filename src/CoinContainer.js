@@ -16,6 +16,9 @@ class CoinContainer extends Component {
       nTails: 0
     }    
   }
+  handleClick(e) {
+    
+  }
   render() {
     return (
       <div className='CoinContainer'>
