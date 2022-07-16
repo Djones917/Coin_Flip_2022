@@ -16,8 +16,11 @@ class CoinContainer extends Component {
       nTails: 0
     }    
   }
+  flipCoin() {
+
+  }
   handleClick(e) {
-    
+    this.flipCoin();
   }
   render() {
     return (
