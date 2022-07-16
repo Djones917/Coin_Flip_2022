@@ -14,7 +14,8 @@ class CoinContainer extends Component {
       nFlips: 0,
       nHeads: 0,
       nTails: 0
-    }    
+    }   
+    this.handleClick = this.handleClick.bind(this); 
   }
   flipCoin() {
 
