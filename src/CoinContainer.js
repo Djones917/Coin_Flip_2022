@@ -22,7 +22,7 @@ class CoinContainer extends Component {
     const newCoin = choice(this.props.coins);
     this.setState(st => {
       let newState = {
-        ...st
+        ...st,
         currCoin: newCoin,
         nFlips: st.nFlips +1
       }
