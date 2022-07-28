@@ -23,7 +23,8 @@ class CoinContainer extends Component {
     this.setState(st => {     
        currCoin: newCoin,
        nFlips: st.nFlips + 1,
-       nHeads: st.nHeads + (newCoin.side === "heads" ? 1: 0)       
+       nHeads: st.nHeads + (newCoin.side === "heads" ? 1: 0), 
+       nTails: st.nHeads + (newCoin.side === "tails" ? 1: 0)      
     });
   }
   handleClick(e) {
