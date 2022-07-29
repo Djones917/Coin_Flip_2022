@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { choice } from './helpers';
+import React, { Component } from "react";
+import Coin from "./Coin";
+import { choice } from "./helpers";
 
 class CoinContainer extends Component {
   static defaultProps = {
     coins: [
-      {sides: 'heads', imgSrc: "https://tinyurl.com/react-coin-heads-jpg"},
-      {sides: 'tails', imgSrc: "https://tinyurl.com/react-coin-tails-jpg"}
+      { side: "heads", imgSrc: "https://tinyurl.com/react-coin-heads-jpg" },
+      { side: "tails", imgSrc: "https://tinyurl.com/react-coin-tails-jpg" }
     ]
   };
   constructor(props) {
@@ -15,18 +16,18 @@ class CoinContainer extends Component {
       nFlips: 0,
       nHeads: 0,
       nTails: 0
-    }   
-    this.handleClick = this.handleClick.bind(this); 
+    };
+    this.handleClick = this.handleClick.bind(this);
   }
   flipCoin() {
     const newCoin = choice(this.props.coins);
-    this.setState(st => {  
-      return {   
-       currCoin: newCoin,
-       nFlips: st.nFlips + 1,
-       nHeads: st.nHeads + (newCoin.side === "heads" ? 1: 0), 
-       nTails: st.nHeads + (newCoin.side === "tails" ? 1: 0)  
-      };    
+    this.setState(st => {
+      return {
+        currCoin: newCoin,
+        nFlips: st.nFlips + 1,
+        nHeads: st.nHeads + (newCoin.side === "heads" ? 1 : 0),
+        nTails: st.nTails + (newCoin.side === "tails" ? 1 : 0)
+      };
     });
   }
   handleClick(e) {
@@ -36,11 +37,15 @@ class CoinContainer extends Component {
     return (
       <div className='CoinContainer'>
         <h2>Let's Flip A Coin!</h2>
-        <button onClick={this.handleClick}>Flip The Coin!</button>
-        <p>Out of {this.state.nFlips} flips, there have been {this.state.nHeads} heads and {this.state.nTails} tails!</p>
+        {this.state.currCoin && <Coin info={this.state.currCoin} />}
+        <button onClick={this.handleClick}>Flip Me!</button>
+        <p>
+          Out of {this.state.nFlips} flips, there have been {this.state.nHeads}{" "}
+          heads and {this.state.nTails} tails.
+        </p>
       </div>
-    )
+    );
   }
-} 
+}
 
 export default CoinContainer;
